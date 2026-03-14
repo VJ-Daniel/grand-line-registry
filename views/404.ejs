@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/css/main.css" />
+<%- include("partials/navbar", { title: "Page Not Found" }) %>
+
+<div class="p-8 max-w-2xl mx-auto">
+  <h1 class="text-3xl font-bold mb-6">
+    Lost at Sea
+  </h1>
+  <div class="alert alert-error mb-6">
+    <span><%= message %></span>
+  </div>
+  <p class="text-lg">
+    Even the best pirates sometimes sail into unknown waters. 
+    Try heading back to the main island.
+  </p>
+  <div class="mt-6">
+    <a href="/" class="btn btn-primary">
+      Return to the Ship
+    </a>
+  </div>
+
+</div>

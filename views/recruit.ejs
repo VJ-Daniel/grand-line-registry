@@ -1,0 +1,87 @@
+<link rel="stylesheet" href="/css/main.css" />
+<%- include("partials/navbar", { title: "Join the Crew" }) %>
+
+<% if (errors && errors.length > 0) { %>
+  <div class="alert alert-error mb-6">
+    <ul>
+      <% errors.forEach(error => { %>
+        <li><%= error %></li>
+      <% }) %>
+    </ul>
+  </div>
+<% } %>
+
+<div class="max-w-2xl mx-auto p-6">
+  <form action="/recruit" method="POST" class="space-y-4">
+  <div>
+    <label class="label">Your Name</label>
+    <input
+      type="text"
+      name="applicantName"
+      class="input input-bordered w-full"
+    />
+  </div>
+
+  <div>
+    <label class="label">Special Skill</label>
+    <input
+      type="text"
+      name="skill"
+      class="input input-bordered w-full"
+    />
+  </div>
+  <div>
+    <label class="label">Desired Role</label>
+    <select name="role" class="select select-bordered w-full">
+      <option>Select a role</option>
+      <option>Navigator</option>
+      <option>Cook</option>
+      <option>Sniper</option>
+      <option>Doctor</option>
+      <option>Musician</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div>
+    <label class="label">Why should Luffy let you join?</label>
+    <textarea
+      name="message"
+      class="textarea textarea-bordered w-full"
+    ></textarea>
+  </div>
+  <div>
+    <label class="label">Preferred Sea</label>
+
+    <label class="flex gap-2">
+      <input type="radio" name="sea" value="East Blue" class="radio" />
+      East Blue
+    </label>
+
+    <label class="flex gap-2">
+      <input type="radio" name="sea" value="West Blue" class="radio" />
+      West Blue
+    </label>
+
+    <label class="flex gap-2">
+      <input type="radio" name="sea" value="North Blue" class="radio" />
+      North Blue
+    </label>
+
+    <label class="flex gap-2">
+      <input type="radio" name="sea" value="South Blue" class="radio" />
+      South Blue
+    </label>
+
+  </div>
+  <div class="form-control">
+    <label class="flex gap-2">
+      <input type="checkbox" name="agreeTerms" class="checkbox" />
+      I understand the risks of the Grand Line
+    </label>
+  </div>
+  <button class="btn btn-primary w-full">
+    Submit Application
+  </button>
+
+</form>
+</div>

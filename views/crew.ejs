@@ -1,0 +1,78 @@
+<!--Task 3.2: Crew Table Page-->
+<link rel="stylesheet" href="/css/main.css" />
+<%- include("partials/navbar", { title: "Crew Roster" }) %>
+
+<div class="p-8">
+
+  <div class="overflow-x-auto">
+
+    <table class="table table-zebra w-full">
+
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Role</th>
+          <th>Devil Fruit</th>
+          <th>Bounty</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <% let i = 1; %>
+
+        <% for (const member of crew) { %>
+
+          <tr>
+
+            <td><%= i++ %></td>
+
+            <td><%= member.name %></td>
+
+            <td><%= member.role %></td>
+
+            <td>
+              <%= member.devilFruit ? member.devilFruit : "None" %>
+            </td>
+
+            <td>
+              <%= member.bounty.toLocaleString() %> Berries
+            </td>
+
+            <td>
+
+              <% if (member.status === "active") { %>
+
+                <span class="badge badge-success">
+                  Active
+                </span>
+
+              <% } else if (member.status === "pending") { %>
+
+                <span class="badge badge-warning">
+                  Pending Approval
+                </span>
+
+              <% } else { %>
+
+                <span class="badge badge-error">
+                  Bounty Frozen
+                </span>
+
+              <% } %>
+
+            </td>
+
+          </tr>
+
+        <% } %>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

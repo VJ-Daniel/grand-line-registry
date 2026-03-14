@@ -1,0 +1,54 @@
+<!--Task 3.1: Home Page: Crew Cards-->
+<%- include("partials/navbar", { title: "The Crew" }) %>
+
+<div class="p-8">
+  <div class="text-center mb-10">
+    <h1 class="text-4xl font-bold">The Straw Hat Pirates</h1>
+    <p class="text-gray-500 mt-2">
+      The legendary crew sailing the Grand Line in search of the One Piece.
+    </p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <% for (const member of crew) { %>
+
+      <div class="card bg-base-100 shadow-xl">
+
+        <div class="card-body">
+          <h2 class="card-title">
+            <%= member.name %>
+          </h2>
+          <p><strong>Role:</strong> <%= member.role %></p>
+          <p><strong>Devil Fruit:</strong> <%= member.devilFruit %></p>
+          <p>
+            <strong>Bounty:</strong>
+            <%= member.bounty.toLocaleString() %> Berries
+          </p>
+          <div class="mt-2">
+
+            <% if (member.status === "active") { %>
+              <span class="badge badge-success">Active</span>
+
+            <% } else if (member.status === "pending") { %>
+              <span class="badge badge-warning">Pending Approval</span>
+
+            <% } else { %>
+              <span class="badge badge-error">Bounty Frozen</span>
+            <% } %>
+
+          </div>
+          <div class="card-actions justify-end mt-4">
+            <a href="/crew" class="btn btn-primary">
+              View All Crew
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    <% } %>
+
+  </div>
+
+</div>

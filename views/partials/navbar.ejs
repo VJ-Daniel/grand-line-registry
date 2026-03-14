@@ -1,0 +1,40 @@
+<!--Task 3.1: Navbar Partial-->
+<link rel="stylesheet" href="/css/main.css" />
+<nav class="navbar bg-base-200 shadow-md">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        ☰
+      </div>
+
+      <ul tabindex="0" class="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow">
+
+        <li><a href="/">Home</a></li>
+        <li><a href="/crew">Crew</a></li>
+        <li><a href="/recruit">Recruit</a></li>
+        <li><a href="/log-pose">Log Pose</a></li>
+
+      </ul>
+    </div>
+    <a href="/" class="btn btn-ghost text-xl font-bold">
+      Grand Line Registry
+    </a>
+
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+
+      <li><a href="/">Home</a></li>
+      <li><a href="/crew">Crew</a></li>
+      <li><a href="/recruit">Recruit</a></li>
+      <li><a href="/log-pose">Log Pose</a></li>
+
+    </ul>
+  </div>
+  <div class="navbar-end">
+    <span class="badge badge-primary">
+      <%= title %>
+    </span>
+  </div>
+
+</nav>
